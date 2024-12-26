@@ -1,70 +1,90 @@
-# Getting Started with Create React App
+# React Product Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This is a React-based web application that allows users to manage a list of products. The application provides the following features:
 
-## Available Scripts
+- View a list of all products (Homepage).
+- View detailed information about a single product (Product Page).
+- Create a new product (Create Product Page).
+- Edit an existing product (Edit Product Page).
+- Delete a product (Product Page).
 
-In the project directory, you can run:
+The app interacts with the [Fake Store API](https://fakestoreapi.com/) for product data management.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+1. **Homepage**:
+   - Displays a list of all products.
+   - Provides a link to the Create Product page.
 
-### `npm test`
+2. **Product Page**:
+   - Shows detailed information about a selected product.
+   - Includes options to edit or delete the product.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. **Create Product Page**:
+   - Allows users to create a new product by providing details such as title, price, description, category, and image URL.
 
-### `npm run build`
+4. **Edit Product Page**:
+   - Enables users to update an existing product's details.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+5. **Delete Functionality**:
+   - Users can delete a product from the Product Page, with a confirmation prompt.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Libraries and Tools Used
 
-### `npm run eject`
+1. **React**:
+   - Core library for building the UI.
+   - Utilized React Router for managing navigation.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. **React Router DOM**:
+   - Enables routing between different pages.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+3. **CSS**:
+   - Custom styles for the components.
+   - Separate CSS files for modular styling.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+4. **Fake Store API**:
+   - Provides endpoints for managing product data.
+   - API used for CRUD operations:
+     - Fetching all products.
+     - Fetching a single product by ID.
+     - Creating a new product.
+     - Editing an existing product.
+     - Deleting a product.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+---
 
-## Learn More
+## API Endpoints
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **GET** `/products`: Fetch all products.
+- **GET** `/products/:id`: Fetch details of a single product by ID.
+- **POST** `/products`: Create a new product.
+- **PUT** `/products/:id`: Update an existing product.
+- **DELETE** `/products/:id`: Delete a product by ID.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+---
 
-### Code Splitting
+## How to Run the Project
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/edyshekeev/web-final-project.git
+   ```
 
-### Analyzing the Bundle Size
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3. Start the development server:
+   ```bash
+   npm start
+   ```
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+4. Open your browser and visit:
+   ```
+   http://localhost:3000
