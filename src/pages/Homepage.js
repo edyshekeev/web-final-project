@@ -1,23 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import api from '../utils/api';
+import '../App.css';
 
-function Homepage() {
+function HomePage() {
   const [products, setProducts] = useState([]);
 
   useEffect(() => {
-    api.get('/products')
-      .then(response => setProducts(response.data))
-      .catch(error => console.error(error));
+    fetch('https://fakestoreapi.com/products')
+      .then(response => response.json())
+      .then(data => setProducts(data));
   }, []);
 
   return (
-    <div className="homepage">
-      <h1 className="homepage-title">Homepage</h1>
+    <div className="home-page">
+      <h1 className="home-title">Product List</h1>
+      <Link to="/create" className="create-link">Create New Product</Link>
       <ul className="product-list">
         {products.map(product => (
           <li key={product.id} className="product-item">
-            <Link to={`/product/${product.id}`} className="product-link">{product.name}</Link>
+            <Link to={`/product/${product.id}`} className="product-link">
+              {product.title}
+            </Link>
           </li>
         ))}
       </ul>
@@ -25,4 +28,4 @@ function Homepage() {
   );
 }
 
-export default Homepage;
+export default HomePage;
